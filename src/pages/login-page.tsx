@@ -2,7 +2,7 @@ import { type FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "sonner";
 import capaImage from "@/assets/Capa.jpeg";
-import logoImage from "@/assets/IconeAzulSemFundo.png";
+import sturnusWordmark from "@/assets/NomeSemFundo.png";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -87,11 +87,11 @@ export function LoginPage() {
       <div className="bg-dot-grid flex flex-1 items-center justify-center p-4">
         <Card className="w-3/4 max-w-2xl shadow-xl">
           <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <img src={logoImage} alt="Sturnus Desk" className="size-7 object-contain" />
-              Sturnus Desk
-            </CardTitle>
-            <CardDescription>Atendimento humano em tempo real.</CardDescription>
+            <div className="mb-1 flex items-center justify-center">
+              <img src={sturnusWordmark} alt="Sturnus Flow" className="h-16 w-auto" />
+            </div>
+            <CardTitle className="text-xl">Bem-vindo de volta</CardTitle>
+            <CardDescription>Acesse o Sturnus Desk, o atendimento humano em tempo real.</CardDescription>
           </CardHeader>
           <CardContent>
             {companies ? (
