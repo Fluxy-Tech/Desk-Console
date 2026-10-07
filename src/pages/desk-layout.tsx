@@ -148,7 +148,7 @@ export function DeskLayout() {
 
   return (
     <div className="bg-dot-grid flex h-screen">
-      <aside className="bg-sidebar-gradient border-border flex w-72 shrink-0 flex-col border-r">
+      <aside className="bg-card border-border flex w-72 shrink-0 flex-col border-r">
         <div className="border-border flex items-center justify-between border-b px-4 py-3">
           <div className="flex items-center gap-2">
             <img src={fluxyLogo} alt="Sturnus Desk" className="size-6 object-contain" />
@@ -166,7 +166,7 @@ export function DeskLayout() {
 
         <div className="border-border flex items-center justify-between gap-2 border-b px-4 py-2.5">
           <div className="flex min-w-0 items-center gap-1.5">
-            <span className={cn("size-2 shrink-0 rounded-full", STATUS_DOT[attendantStatus])} />
+            <span className={cn("size-2 shrink-0 rounded-lg", STATUS_DOT[attendantStatus])} />
             <span className="truncate text-sm font-medium">{userName ?? "Atendente"}</span>
           </div>
           <div className="flex shrink-0 gap-1">
@@ -202,7 +202,7 @@ export function DeskLayout() {
 
         <div className="flex-1 overflow-y-auto px-3 py-2">
           <p className="text-muted-foreground px-1 pt-1 pb-2 text-center text-xs font-medium tracking-wide uppercase">Meus tickets</p>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {mine?.map((ticket) => {
               const isUnread = unreadTicketIds.has(ticket.id);
               const isActive = activeTicketId === ticket.id;
@@ -211,13 +211,15 @@ export function DeskLayout() {
                   key={ticket.id}
                   onClick={() => navigate(`/tickets/${ticket.id}`)}
                   className={cn(
-                    "flex w-full flex-col items-start gap-1 rounded-md border p-3 text-left transition-all hover:-translate-y-0.5",
-                    isActive ? "border-primary/30 bg-primary/5 shadow-lg" : "border-transparent bg-transparent hover:shadow-md",
+                    "flex w-full flex-col items-start gap-1 rounded-md p-3 text-left transition-colors",
+                    isActive
+                      ? "bg-sidebar-active text-sidebar-active-foreground"
+                      : "text-sidebar-item-foreground hover:bg-sidebar-hover hover:text-sidebar-hover-foreground",
                   )}
                 >
                   <span className="flex w-full items-center justify-between gap-2">
                     <span className="flex min-w-0 items-center gap-1.5">
-                      {isUnread && <span className="bg-primary size-2 shrink-0 rounded-full" aria-label="Mensagem não lida" />}
+                      {isUnread && <span className="bg-primary size-2 shrink-0 rounded-lg" aria-label="Mensagem não lida" />}
                       <span className={cn("truncate text-base", isUnread ? "font-semibold" : "font-medium")}>
                         {ticket.target?.name || ticket.target?.waId || "Contato"}
                       </span>

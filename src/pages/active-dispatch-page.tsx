@@ -331,7 +331,7 @@ export function ActiveDispatchPage() {
                   {Array.from({ length: totalVars }).map((_, i) => (
                     <div key={i} className="border-border rounded-lg border p-3">
                       <div className="mb-1.5 flex items-center gap-2">
-                        <span className="bg-primary/10 text-primary flex size-5 shrink-0 items-center justify-center rounded-full text-xs font-semibold">
+                        <span className="bg-primary/10 text-primary flex size-5 shrink-0 items-center justify-center rounded-lg text-xs font-semibold">
                           {i + 1}
                         </span>
                         <Label htmlFor={`dispatch-var-${i}`} className="text-xs font-normal">
@@ -370,7 +370,7 @@ export function ActiveDispatchPage() {
                 type="button"
                 onClick={() => setContactMode("existing")}
                 className={cn(
-                  "flex h-8 items-center justify-center rounded-full border px-3 text-xs font-medium transition-colors",
+                  "flex h-8 items-center justify-center rounded-lg border px-3 text-xs font-medium transition-colors",
                   contactMode === "existing" ? "border-primary bg-primary text-primary-foreground" : "border-input bg-background",
                 )}
               >
@@ -380,7 +380,7 @@ export function ActiveDispatchPage() {
                 type="button"
                 onClick={() => setContactMode("new")}
                 className={cn(
-                  "flex h-8 items-center justify-center rounded-full border px-3 text-xs font-medium transition-colors",
+                  "flex h-8 items-center justify-center rounded-lg border px-3 text-xs font-medium transition-colors",
                   contactMode === "new" ? "border-primary bg-primary text-primary-foreground" : "border-input bg-background",
                 )}
               >

@@ -132,7 +132,7 @@ export function AudioRecorderButton({ disabled, onRecorded }: AudioRecorderButto
       <Button type="button" variant="ghost" size="icon" className="size-8" onClick={() => finish(true)} aria-label="Cancelar gravação">
         <X className="size-4" />
       </Button>
-      <span className="bg-destructive size-2 animate-pulse rounded-full" />
+      <span className="bg-destructive size-2 animate-pulse rounded-lg" />
       <span className="text-destructive w-10 text-sm tabular-nums">{formatTimer(seconds)}</span>
       <Button type="button" size="icon" className="size-8" onClick={() => finish(false)} aria-label="Enviar áudio">
         <Check className="size-4" />
