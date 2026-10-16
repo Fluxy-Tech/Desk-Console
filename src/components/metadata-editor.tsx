@@ -147,8 +147,8 @@ export function MetadataEditor({ targetId, metadata, onUpdated }: MetadataEditor
               </div>
               <Button
                 variant="ghost"
-                size="icon"
-                className="mt-0.5 size-6 shrink-0"
+                size="icon-sm"
+                className="mt-0.5 shrink-0"
                 disabled={saving}
                 onClick={() => handleRemove(key)}
               >

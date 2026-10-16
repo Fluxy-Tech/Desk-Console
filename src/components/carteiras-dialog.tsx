@@ -3,6 +3,7 @@ import useSWR from "swr";
 import { toast } from "sonner";
 import { Save, WalletCards } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
   Dialog,
   DialogContent,
@@ -78,11 +79,9 @@ export function CarteirasDialog({ ticketId }: { ticketId: string }) {
                 key={carteira.id}
                 className="hover:bg-muted/50 flex cursor-pointer items-center gap-3 rounded-md border px-3 py-2"
               >
-                <input
-                  type="checkbox"
-                  className="accent-primary size-4"
+                <Checkbox
                   checked={selected.has(carteira.id)}
-                  onChange={() => toggle(carteira.id)}
+                  onCheckedChange={() => toggle(carteira.id)}
                 />
                 <div className="min-w-0">
                   <p className="truncate text-sm font-medium">{carteira.name}</p>

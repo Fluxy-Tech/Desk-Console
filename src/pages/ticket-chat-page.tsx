@@ -380,7 +380,7 @@ export function TicketChatPage() {
         </div>
         <Dialog open={transferOpen} onOpenChange={setTransferOpen}>
           <DialogTrigger asChild>
-            <Button variant="outline" size="sm" className="h-10">
+            <Button variant="outline" size="sm" >
               <ArrowRightLeft className="size-4" /> Transferir
             </Button>
           </DialogTrigger>
@@ -422,7 +422,7 @@ export function TicketChatPage() {
         </Dialog>
         <Dialog open={closeOpen} onOpenChange={(open) => (open ? openCloseDialog() : setCloseOpen(false))}>
           <DialogTrigger asChild>
-            <Button variant="outline-destructive" size="sm" className="h-10">
+            <Button variant="outline-destructive" size="sm" >
               Encerrar
             </Button>
           </DialogTrigger>
@@ -512,7 +512,7 @@ export function TicketChatPage() {
                   <div className="flex items-center gap-2">
                     <Dialog>
                       <DialogTrigger asChild>
-                        <Button type="button" variant="ghost" size="icon" className="size-10 shrink-0" aria-label="Limites de anexo">
+                        <Button type="button" variant="ghost" size="icon" className="shrink-0" aria-label="Limites de anexo">
                           <HelpCircle className="text-muted-foreground size-4" />
                         </Button>
                       </DialogTrigger>
@@ -541,8 +541,8 @@ export function TicketChatPage() {
                     <Button
                       type="button"
                       variant="outline"
-                      size="icon"
-                      className="size-12 shrink-0"
+                      size="icon-lg"
+                      className="shrink-0"
                       disabled={uploading}
                       onClick={() => fileInputRef.current?.click()}
                     >
@@ -557,8 +557,8 @@ export function TicketChatPage() {
                         <Button
                           type="button"
                           variant="outline"
-                          size="icon"
-                          className="size-12 shrink-0"
+                          size="icon-lg"
+                          className="shrink-0"
                           aria-label="Mensagens rápidas"
                         >
                           <Zap className="size-4" />
@@ -604,8 +604,8 @@ export function TicketChatPage() {
                   />
                   <Button
                     type="submit"
-                    size="icon"
-                    className="size-12 shrink-0"
+                    size="icon-lg"
+                    className="shrink-0"
                     disabled={sending || !text.trim()}
                   >
                     <Send className="size-4" />
